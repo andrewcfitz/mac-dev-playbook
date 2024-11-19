@@ -46,6 +46,10 @@
       when: configure_sublime
       tags: ['sublime-text']
 
+    - import_tasks: tasks/oh-my-zsh.yml
+      when: configure_oh_my_zsh
+      tags: ['oh-my-zsh']
+
     - name: Run post-provision task files in a block.
       tags: ['post']
       block:
