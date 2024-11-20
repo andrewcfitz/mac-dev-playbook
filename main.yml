@@ -50,6 +50,10 @@
       when: configure_oh_my_zsh
       tags: ['oh-my-zsh']
 
+    - import_tasks: tasks/xcode.yml
+      when: configure_xcode
+      tags: ['xcode']
+
     - name: Run post-provision task files in a block.
       tags: ['post']
       block:

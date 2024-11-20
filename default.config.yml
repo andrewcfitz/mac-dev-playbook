@@ -3,14 +3,27 @@ configure_dotfiles: true
 configure_terminal: true
 configure_osx: true
 configure_oh_my_zsh: true
+configure_xcode: true
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
 dockitems_remove:
-  - Launchpad
+  - Messages
+  - Mail
+  - Maps
+  - Photos
+  - FaceTime
+  - Calendar
+  - Contacts
+  - Reminders
+  - Notes
+  - Freeform
   - TV
-  - Podcasts
+  - Music
+  - News
   - 'App Store'
+  - Podcasts
+  - 'System Settings'
 dockitems_persist: []
 # - name: "Sublime Text"
 #   path: "/Applications/Sublime Text.app/"
@@ -89,6 +102,7 @@ homebrew_installed_packages:
   - watch
   - wget
   - wimlib
+  - xcodes
 
 homebrew_taps:
   - homebrew/bundle
