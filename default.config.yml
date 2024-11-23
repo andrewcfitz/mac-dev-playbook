@@ -47,9 +47,9 @@ dotfiles_files:
   - .vimrc
 
 homebrew_installed_packages:
-  # - 1password-cli
+  - artginzburg/tap/sudo-touchid  # Installing this early to avoid password prompts.
   - actionlint
-# - ansible # Installed via Pip.
+  # - ansible # Installed via Pip.
   - ansible-lint
   - aria2
   - aws-nuke
@@ -94,7 +94,7 @@ homebrew_installed_packages:
   - sl
   - speedtest-cli
   - stow
-  - swiftlint
+  # - swiftlint
   - tcptraceroute
   - tfenv
   - util-linux
