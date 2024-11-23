@@ -1,0 +1,10 @@
+---
+- name: Run a role within a task with variables
+  include_role:
+    name: gantsign.visual-studio-code-extensions
+  vars:
+    users:
+      - username: "{{ lookup('env', 'USER') }}"
+        visual_studio_code_extensions:
+          - "{{ item.name | default(item) }}"
+  loop: "{{ composer_packages }}"

@@ -42,6 +42,10 @@
       when: configure_xcode
       tags: ['xcode']
 
+    - import_tasks: tasks/vscode-extensions.yml
+      when: configure_vscode_extensions
+      tags: ['vscode-extensions']
+
     - name: Run post-provision task files in a block.
       tags: ['post']
       block:

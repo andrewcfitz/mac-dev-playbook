@@ -4,6 +4,7 @@ configure_terminal: true
 configure_osx: true
 configure_oh_my_zsh: true
 configure_xcode: true
+configure_vscode_extensions: true
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
@@ -209,3 +210,16 @@ configure_sublime: false
 
 # # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
+
+visual_studio_code_extensions:
+  - 4ops.terraform
+  - github.copilot
+  - github.copilot-chat
+  - ms-python.debugpy
+  - ms-python.python
+  - ms-python.vscode-pylance
+  - paulober.pico-w-go
+  - redhat.ansible
+  - redhat.vscode-yaml
+  - visualstudioexptteam.intellicode-api-usage-examples
+  - visualstudioexptteam.vscodeintellicode
