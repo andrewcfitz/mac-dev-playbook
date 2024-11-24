@@ -1,11 +1,13 @@
 ---
-- include_vars: ../secrets/apple.yml
+- name: Download Xcode
+  ansible.builtin.get_url:
+    url: http://mirror.fitz.biz/Xcode-16-latest.xip
+    dest: /tmp/Xcode-16-latest.xip
+    mode: '0660'
 
-- name: Install latest Xcode.
-  command: xcodes install --latest
-  changed_when: false
-  failed_when: false
-  check_mode: false
-  environment:
-    XCODES_USERNAME: '{{ appleid }}'
-    XCODES_PASSWORD: '{{ appleid_password }}'
+- name: Install Xcode
+  include_role:
+    name: macstadium.xcode
+  vars:
+    xcode_xip_location: '/tmp/Xcode-16-latest.xip'
+    xcode_major_version: 16
