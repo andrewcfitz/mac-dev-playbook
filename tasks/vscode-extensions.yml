@@ -1,5 +1,5 @@
 ---
-- name: Run a role within a task with variables
+- name: Install Visual Studio Code extensions
   include_role:
     name: gantsign.visual-studio-code-extensions
   vars:

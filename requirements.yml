@@ -3,6 +3,8 @@ roles:
   - name: elliotweiser.osx-command-line-tools
   - name: geerlingguy.dotfiles
   - name: gantsign.visual-studio-code-extensions
+  - name: lwalley.iterm2
+    src: https://github.com/lwalley/ansible-role-iterm2
 
 collections:
   - name: geerlingguy.mac
