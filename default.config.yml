@@ -48,6 +48,9 @@ dotfiles_files:
   - .vimrc
   - .p10k.zsh
 
+xcode_xip_filename: "Xcode-16.1.0+16B40.xip"
+xcode_major_version: 16
+
 homebrew_installed_packages:
   - artginzburg/tap/sudo-touchid  # Installing this early to avoid password prompts.
   - actionlint

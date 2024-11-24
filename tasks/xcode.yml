@@ -1,13 +1,13 @@
 ---
 - name: Download Xcode
   ansible.builtin.get_url:
-    url: http://mirror.fitz.biz/Xcode-16-latest.xip
-    dest: /tmp/Xcode-16-latest.xip
-    mode: '0660'
+    url: "http://mirror.fitz.biz/{{ xcode_xip_filename }}"
+    dest: "/tmp/{{ xcode_xip_filename }}"
+    mode: "0660"
 
 - name: Install Xcode
   include_role:
     name: macstadium.xcode
   vars:
-    xcode_xip_location: '/tmp/Xcode-16-latest.xip'
-    xcode_major_version: 16
+    xcode_xip_location: "/tmp/{{ xcode_xip_filename }}"
+    xcode_major_version: "{{ xcode_major_version | int }}"
