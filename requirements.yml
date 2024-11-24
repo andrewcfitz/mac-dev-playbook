@@ -3,7 +3,7 @@ roles:
   - name: elliotweiser.osx-command-line-tools
   - name: geerlingguy.dotfiles
   - name: gantsign.visual-studio-code-extensions
-  - name: macstadium.xcode
+  - name: tedgonzalez.xcodeinstall
   - name: lwalley.iterm2
     src: https://github.com/lwalley/ansible-role-iterm2
 

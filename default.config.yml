@@ -48,7 +48,7 @@ dotfiles_files:
   - .vimrc
   - .p10k.zsh
 
-xcode_xip_filename: "Xcode-16.1.0+16B40.xip"
+xcode_xip_filename: "Xcode-16.1.0.xip"
 xcode_major_version: 16
 
 homebrew_installed_packages:

@@ -7,7 +7,8 @@
 
 - name: Install Xcode
   include_role:
-    name: macstadium.xcode
+    name: tedgonzalez.xcodeinstall
   vars:
-    xcode_xip_location: "/tmp/{{ xcode_xip_filename }}"
-    xcode_major_version: "{{ xcode_major_version | int }}"
+    xcode_xip_name: "{{ xcode_xip_filename }}"
+    xcode_xip_path: "/tmp/{{ xcode_xip_filename }}"
+    xcode_app_output_path: "/Applications/Xcode.app"
