@@ -46,6 +46,7 @@ dotfiles_files:
   - .gitignore
   - .osx
   - .vimrc
+  - .p10k.zsh
 
 homebrew_installed_packages:
   - artginzburg/tap/sudo-touchid  # Installing this early to avoid password prompts.
@@ -162,7 +163,6 @@ homebrew_cask_apps:
   - visual-studio-code
   - vlc
   - wireshark
-  - xcodes
 
 # # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
