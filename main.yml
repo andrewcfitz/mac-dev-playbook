@@ -11,6 +11,9 @@
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
+    - import_tasks: tasks/oh-my-zsh.yml
+      when: configure_oh_my_zsh
+      tags: ['oh-my-zsh']
 
   roles:
     - role: elliotweiser.osx-command-line-tools
@@ -33,10 +36,6 @@
 
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
-
-    - import_tasks: tasks/oh-my-zsh.yml
-      when: configure_oh_my_zsh
-      tags: ['oh-my-zsh']
 
     - import_tasks: tasks/xcode.yml
       when: configure_xcode
