@@ -19,6 +19,10 @@
       when: configure_oh_my_zsh
       tags: ['oh-my-zsh']
 
+    - import_tasks: tasks/sudoers.yml
+      when: configure_sudoers
+      tags: ['sudoers']
+
     - import_tasks: tasks/homebrew.yml
       tags: ['homebrew']
 
