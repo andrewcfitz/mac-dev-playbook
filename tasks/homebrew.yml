@@ -1,0 +1,4 @@
+---
+- name: Install Homebrew
+  include_role:
+    name: geerlingguy.mac.homebrew

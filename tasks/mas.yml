@@ -1,0 +1,4 @@
+---
+- name: Install mas apps
+  include_role:
+    name: geerlingguy.mac.mas

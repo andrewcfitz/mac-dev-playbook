@@ -11,25 +11,29 @@
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
+
+  tasks:
+    - import_tasks: tasks/osx-command-line-tools.yml
+
     - import_tasks: tasks/oh-my-zsh.yml
       when: configure_oh_my_zsh
       tags: ['oh-my-zsh']
 
-  roles:
-    - role: elliotweiser.osx-command-line-tools
-    - role: geerlingguy.mac.homebrew
+    - import_tasks: tasks/homebrew.yml
       tags: ['homebrew']
-    - role: geerlingguy.dotfiles
+
+    - import_tasks: tasks/dotfiles.yml
       when: configure_dotfiles
       tags: ['dotfiles']
-    - role: geerlingguy.mac.mas
+
+    - import_tasks: tasks/mas.yml
       when: mas_installed_apps or mas_installed_app_ids
       tags: ['mas']
-    - role: geerlingguy.mac.dock
-      when: configure_dock
+
+    - import_tasks: tasks/dock.yml
+      when: configure_dotfiles
       tags: ['dock']
 
-  tasks:
     - import_tasks: tasks/osx.yml
       when: configure_osx
       tags: ['osx']

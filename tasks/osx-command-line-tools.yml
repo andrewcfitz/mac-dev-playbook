@@ -1,0 +1,4 @@
+---
+- name: Install osx-command-line-tools
+  include_role:
+    name: elliotweiser.osx-command-line-tools
