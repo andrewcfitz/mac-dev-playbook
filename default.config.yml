@@ -3,7 +3,8 @@ configure_dotfiles: true
 configure_terminal: true
 configure_osx: true
 configure_oh_my_zsh: true
-configure_xcode: true
+configure_xcode: false
+configure_nuget: true
 configure_vscode_extensions: true
 
 # Set to 'true' to configure the Dock via dockutil.

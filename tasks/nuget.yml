@@ -1,0 +1,18 @@
+---
+- name: Check if NuGet source is already added
+  ansible.builtin.command:
+    cmd: dotnet nuget list source
+  register: nuget_sources
+  changed_when: false
+  environment:
+    PATH: "/usr/local/share/dotnet:{{ ansible_env.PATH }}"
+
+- name: Add NuGet source if not present
+  ansible.builtin.command:
+    cmd: >
+      dotnet nuget add source
+      https://proget.fitz.biz/nuget/fitz-biz-packages/v3/index.json
+      -n fitz-biz
+  environment:
+    PATH: "/usr/local/share/dotnet:{{ ansible_env.PATH }}"
+  when: "'fitz-biz' not in nuget_sources.stdout"

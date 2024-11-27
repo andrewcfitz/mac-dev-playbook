@@ -49,6 +49,10 @@
       when: configure_xcode
       tags: ['xcode']
 
+    - import_tasks: tasks/nuget.yml
+      when: configure_nuget
+      tags: ['nuget']
+
     - import_tasks: tasks/vscode-extensions.yml
       when: configure_vscode_extensions
       tags: ['vscode-extensions']
