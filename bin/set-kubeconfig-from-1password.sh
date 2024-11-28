@@ -5,7 +5,7 @@ set -e
 
 # Check if the hostname parameter is provided
 if [ -z "$1" ]; then
-  echo "Usage: $0 <hostname>"
+  echo "Usage: kubecfg1p <hostname>"
   exit 1
 fi
 
