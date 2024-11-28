@@ -13,7 +13,8 @@ fi
 HOSTNAME="$1"
 OP_ITEM_NAME="k3s config - ${HOSTNAME}"    # Construct the 1Password item name
 KUBE_CONFIG_FIELD="config"                 # The field name containing the kubeconfig value
-KUBE_CONFIG_PATH="$HOME/.kube/config"      # Path to save the kubeconfig file
+KUBE_CONFIG_DIR="$HOME/.kube"              # Directory to save the kubeconfig file
+KUBE_CONFIG_PATH="$KUBE_CONFIG_DIR/config" # Full path to the kubeconfig file
 
 # Check if the 1Password CLI is installed
 if ! command -v op &> /dev/null; then
@@ -35,6 +36,12 @@ KUBECONFIG_CONTENT=$(op item get "$OP_ITEM_NAME" --field "$KUBE_CONFIG_FIELD")
 if [ -z "$KUBECONFIG_CONTENT" ]; then
   echo "Error: Could not retrieve kubeconfig from 1Password. Check item name and field."
   exit 1
+fi
+
+# Ensure the .kube directory exists
+if [ ! -d "$KUBE_CONFIG_DIR" ]; then
+  echo "Creating .kube directory at $KUBE_CONFIG_DIR"
+  mkdir -p "$KUBE_CONFIG_DIR"
 fi
 
 # Backup the existing kubeconfig if it exists
