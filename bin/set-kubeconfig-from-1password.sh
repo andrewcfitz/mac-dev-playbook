@@ -32,6 +32,9 @@ fi
 echo "Fetching kubeconfig from 1Password item: $OP_ITEM_NAME, field: $KUBE_CONFIG_FIELD"
 KUBECONFIG_CONTENT=$(op item get "$OP_ITEM_NAME" --field "$KUBE_CONFIG_FIELD")
 
+# Remove surrounding quotes from the kubeconfig content, if any
+KUBECONFIG_CONTENT=$(echo "$KUBECONFIG_CONTENT" | sed 's/^"//;s/"$//')
+
 # Check if the kubeconfig value was fetched successfully
 if [ -z "$KUBECONFIG_CONTENT" ]; then
   echo "Error: Could not retrieve kubeconfig from 1Password. Check item name and field."
