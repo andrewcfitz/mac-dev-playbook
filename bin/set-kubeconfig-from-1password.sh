@@ -12,7 +12,7 @@ fi
 # Variables
 HOSTNAME="$1"
 OP_ITEM_NAME="k3s config - ${HOSTNAME}"    # Construct the 1Password item name
-KUBE_CONFIG_FIELD="kubeconfig"             # The field name containing the kubeconfig value
+KUBE_CONFIG_FIELD="config"                 # The field name containing the kubeconfig value
 KUBE_CONFIG_PATH="$HOME/.kube/config"      # Path to save the kubeconfig file
 
 # Check if the 1Password CLI is installed
