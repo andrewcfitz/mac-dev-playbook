@@ -117,6 +117,7 @@ homebrew_taps:
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - 1password
+  - 1password-cli
   - android-studio
   - audacity
   - balenaetcher
