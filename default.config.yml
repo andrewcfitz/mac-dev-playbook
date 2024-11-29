@@ -230,7 +230,6 @@ visual_studio_code_extensions:
   - visualstudioexptteam.vscodeintellicode
 
 git_repos:
-  - git@github.com:andrewcfitz/ansible-role-xcode.git
   - git@github.com:andrewcfitz/connect.git
   - git@github.com:andrewcfitz/dotfiles.git
   - git@github.com:andrewcfitz/media.git
@@ -241,8 +240,6 @@ git_repos:
   - git@github.com:fitz-biz/Fitz.OnePassword.Connect.git
   - git@github.com:fitz-biz/Fitz.Peplink.Api.Client.git
   - git@github.com:fitz-biz/getalong.git
-  - git@github.com:fitz-biz/GPS.NET.git
-  - git@github.com:fitz-biz/ha-tools-home.git
   - git@github.com:fitz-biz/ha-tools.git
   - git@github.com:fitz-biz/HAGpsSync.git
   - git@github.com:fitz-biz/louie-camp.git
