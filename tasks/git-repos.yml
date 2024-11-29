@@ -1,0 +1,9 @@
+---
+- name: Clone git repos
+  ansible.builtin.git:
+    repo: "{{ item.name | default(item) }}"
+    dest: "{{ ansible_env.HOME }}/workspace/{{ item.name | default(item) | basename | regex_replace('\\.git$', '') }}"
+    version: "main"
+    update: no
+  loop: "{{ git_repos }}"
+  when: git_repos is defined
