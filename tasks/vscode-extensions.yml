@@ -7,4 +7,4 @@
       - username: "{{ lookup('env', 'USER') }}"
         visual_studio_code_extensions:
           - "{{ item.name | default(item) }}"
-  loop: "{{ composer_packages }}"
+  loop: "{{ visual_studio_code_extensions }}"

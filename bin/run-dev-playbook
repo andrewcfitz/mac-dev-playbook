@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Define the path to the Ansible playbook
+PLAYBOOK_DIR=~/workspace/mac-dev-playbook
+PLAYBOOK_FILE=main.yml
+
+# Function to display help
+show_help() {
+  echo "Usage: run-dev-playbook [TAG]"
+  echo
+  echo "Runs the Ansible playbook located in $PLAYBOOK_DIR"
+  echo
+  echo "Optional Arguments:"
+  echo "  TAG     Run the playbook with the specified tag (passed to --tags)"
+  echo
+  echo "Examples:"
+  echo "  run-dev-playbook               # Run the playbook without tags"
+  echo "  run-dev-playbook my_tag        # Run the playbook with the 'my_tag' tag"
+}
+
+# Check for --help flag
+if [[ "$1" == "--help" ]]; then
+  show_help
+  exit 0
+fi
+
+# Move to the playbook directory
+cd "$PLAYBOOK_DIR" || { echo "Error: Cannot navigate to $PLAYBOOK_DIR"; exit 1; }
+
+# Check if a tag is passed as an argument
+if [ -n "$1" ]; then
+  TAG_OPTION="--tags $1"
+else
+  TAG_OPTION=""
+fi
+
+# Run the Ansible playbook
+ansible-playbook $PLAYBOOK_FILE --ask-become-pass $TAG_OPTION
