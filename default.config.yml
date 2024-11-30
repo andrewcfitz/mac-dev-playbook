@@ -37,6 +37,7 @@ sudoers_custom_config: |
   %admin ALL=(ALL) NOPASSWD: ALL
 
 dotfiles_repo: https://github.com/andrewcfitz/dotfiles.git
+dotfiles_repo_version: main
 dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/workspace/dotfiles
 dotfiles_files:
@@ -65,6 +66,7 @@ homebrew_installed_packages:
   - cloudflare-wrangler2
   - coreutils
   - crane
+  - docker-buildx
   - exiftool
   - ffmpeg
   - figlet

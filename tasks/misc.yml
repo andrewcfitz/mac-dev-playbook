@@ -1,0 +1,13 @@
+---
+- name: Figlet Fonts - Clone figlet fonts repository
+  ansible.builtin.git:
+    repo: https://github.com/imegeek/figlet-fonts
+    dest: /tmp/figlet-fonts
+    force: true
+
+- name: Figlet Fonts - Copy figlet fonts to the target directory
+  ansible.builtin.copy:
+    src: /tmp/figlet-fonts/
+    dest: /usr/local/Cellar/figlet/2.2.5/share/figlet/fonts/
+    remote_src: true
+  become: true

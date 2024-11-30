@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Ensure xcodes CLI is installed
+if ! command -v xcodes &> /dev/null; then
+    echo "xcodes CLI is not installed. Please install it first."
+    exit 1
+fi
+
+# Get the latest non-beta, non-RC version of Xcode
+latest_version=$(sudo xcodes list | grep -v -E 'Beta|Release Candidate' | grep -Eo '^[0-9]+\.[0-9]+(\.[0-9]+)?' | tail -n 1)
+
+# Ensure latest_version has full semantic version
+if [[ $(echo "$latest_version" | grep -o '\.' | wc -l) -eq 1 ]]; then
+    latest_version="${latest_version}.0"
+elif [[ $(echo "$latest_version" | grep -o '\.' | wc -l) -eq 0 ]]; then
+    latest_version="${latest_version}.0.0"
+fi
+
+# Get the currently installed version of Xcode
+current_version=$(sudo xcodes installed | grep -Eo '^[0-9]+\.[0-9]+(\.[0-9]+)?' | head -n 1)
+
+echo "Latest version available: $latest_version"
+echo "Current installed version: $current_version"
+
+# Compare versions and install if a newer version is available
+if [ "$latest_version" != "$current_version" ]; then
+    read -p "A newer version of Xcode is available. Do you want to install Xcode $latest_version and remove old versions of Xcode? (y/n): " confirm
+    if [[ $confirm == [yY] ]]; then
+        echo "Installing Xcode $latest_version..."
+        sudo xcodes install $latest_version
+        echo "Xcode $latest_version installed successfully."
+
+        # Create/Update symlink to the new version
+        sudo ln -sf "/Applications/Xcode-$latest_version.app" /Applications/Xcode.app
+        echo "Symlink updated to Xcode $latest_version."
+
+        # Remove old versions of Xcode except the current version
+        for xcode_path in /Applications/Xcode-*.app; do
+            if [[ "$xcode_path" == "/Applications/Xcode-$latest_version.app" ]]; then
+                continue
+            fi
+
+            sudo rm -rf "$xcode_path"
+            echo "Removed old version: $xcode_path"
+        done
+    else
+        echo "Update canceled."
+    fi
+else
+    echo "You already have the latest version of Xcode installed."
+fi
