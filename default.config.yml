@@ -108,6 +108,8 @@ homebrew_installed_packages:
   - wget
   - wimlib
   - xcodes
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
 
 homebrew_taps:
   - homebrew/bundle
