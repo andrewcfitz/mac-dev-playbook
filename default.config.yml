@@ -62,13 +62,13 @@ homebrew_installed_packages:
   - bash
   - cabextract
   - cdrtools
-  - chruby
   - cloudflare-wrangler2
   - coreutils
   - crane
   - docker-buildx
   - exiftool
   - ffmpeg
+  - fastlane
   - figlet
   - fontconfig
   - gh
@@ -96,7 +96,7 @@ homebrew_installed_packages:
   - powerlevel10k
   - pulumi
   - rclone
-  - ruby-install
+  - rbenv
   - s3cmd
   - sl
   - speedtest-cli
