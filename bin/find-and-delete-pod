@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Function to display help
+show_help() {
+    echo "Usage: $0 <prefix>"
+    echo "Example: $0 mypod"
+}
+
+# Check if prefix is provided
+if [ -z "$1" ]; then
+    echo "Error: Prefix is required."
+    show_help
+    exit 1
+fi
+
+PREFIX=$1
+
+# Find the pod by prefix
+POD_NAME=$(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep "^${PREFIX}")
+
+# Check if pod exists
+if [ -z "$POD_NAME" ]; then
+    echo "Error: No pod found with prefix '${PREFIX}'."
+    exit 1
+fi
+
+# Delete the pod
+kubectl delete pod "$POD_NAME"

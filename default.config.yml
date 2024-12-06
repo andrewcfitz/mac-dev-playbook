@@ -158,6 +158,7 @@ homebrew_cask_apps:
   - postman
   - proton-mail
   - qflipper
+  - raspberry-pi-imager
   - rectangle
   - sf-symbols
   - stats
@@ -190,10 +191,10 @@ gem_packages: []
 # - name: bundler
 #   state: present # present/absent/latest, default: present
 #   version: "~> 1.15.1" # default: N/A
-npm_packages: []
-# - name: webpack
-#   state: present # present/absent/latest, default: present
-#   version: "^2.6" # default: N/A
+npm_packages:
+- name: nswag
+  state: present # present/absent/latest, default: present
+  version: "^14.2" # default: N/A
 pip_packages: []
 # - name: mkdocs
 #   state: present # present/absent/latest, default: present
@@ -255,4 +256,5 @@ git_repos:
   - git@github.com:fitz-biz/proxmox.git
   - git@github.com:fitz-biz/rvchecklist.git
   - git@github.com:fitz-biz/smtp-bridge.git
+  - git@github.com:fitz-biz/stuff.git
   - git@github.com:fitz-biz/tailscale.git
