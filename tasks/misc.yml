@@ -11,3 +11,10 @@
     dest: /usr/local/Cellar/figlet/2.2.5/share/figlet/fonts/
     remote_src: true
   become: true
+
+- name: Create a symlink from /path/to/source to /usr/local/bin/docker
+  ansible.builtin.file:
+    src: "{{ playbook_dir }}/bin/docker-alias.sh"
+    dest: /usr/local/bin/docker
+    state: link
+  become: true
