@@ -65,12 +65,14 @@ homebrew_installed_packages:
   - cloudflare-wrangler2
   - coreutils
   - crane
+  - dosbox-x
   - exiftool
   - ffmpeg
   - fastlane
   - figlet
   - fontconfig
   - gh
+  - ghostscript
   - git
   - git-lfs
   - gnu-sed
@@ -142,6 +144,7 @@ homebrew_cask_apps:
   - font-hack-nerd-font
   - fork
   - github
+  - github-copilot-for-xcode
   - google-chrome
   - iterm2
   - itermai
@@ -162,6 +165,7 @@ homebrew_cask_apps:
   - raspberry-pi-imager
   - rectangle
   - sf-symbols
+  - slack
   - stats
   - steam
   - tailscale
@@ -239,13 +243,16 @@ git_repos:
   - git@github.com:andrewcfitz/connect.git
   - git@github.com:andrewcfitz/dotfiles.git
   - git@github.com:andrewcfitz/media.git
+  - git@github.com:andrewcfitz/plex-k3s.git
   - git@github.com:fitz-biz/1password-connect.git
   - git@github.com:fitz-biz/car.git
   - git@github.com:fitz-biz/cloudflared-k3s.git
   - git@github.com:fitz-biz/download.git
   - git@github.com:fitz-biz/Fitz.OnePassword.Connect.git
   - git@github.com:fitz-biz/Fitz.Peplink.Api.Client.git
+  - git@github.com:fitz-biz/k3s-cluster1.git
   - git@github.com:fitz-biz/getalong.git
+  - git@github.com:fitz-biz/github-runners.git
   - git@github.com:fitz-biz/ha-tools.git
   - git@github.com:fitz-biz/HAGpsSync.git
   - git@github.com:fitz-biz/louie-camp.git
