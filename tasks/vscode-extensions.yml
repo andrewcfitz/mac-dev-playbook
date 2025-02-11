@@ -7,4 +7,15 @@
       - username: "{{ lookup('env', 'USER') }}"
         visual_studio_code_extensions:
           - "{{ item.name | default(item) }}"
-  loop: "{{ visual_studio_code_extensions }}"
+  loop: "{{ visual_studio_code.extensions }}"
+  when: visual_studio_code.extensions is defined
+
+- name: Create a symbolic link for vscode settings
+  ansible.builtin.file:
+    src: "{{ visual_studio_code.settings_path }}"
+    dest: "~/Library/Application Support/Code/User/settings.json"
+    owner: andrew
+    group: staff
+    state: link
+    force: true
+  when: visual_studio_code.settings_path is defined

@@ -4,6 +4,15 @@
     repo: "{{ item.name | default(item) }}"
     dest: "{{ ansible_env.HOME }}/workspace/{{ item.name | default(item) | basename | regex_replace('\\.git$', '') }}"
     version: "main"
-    update: no
+    update: false
   loop: "{{ git_repos }}"
   when: git_repos is defined
+
+- name: Change dotfiles repo to use ssh keys
+  git_config:
+    repo: "{{ ansible_env.HOME }}/workspace/{{ item.name }}/"
+    scope: "local"
+    name: "remote.origin.url"
+    value: "{{ item.ssh_url }}"
+  loop: "{{ git_repos_to_switch_to_ssh }}"
+  when: git_repos_to_switch_to_ssh is defined

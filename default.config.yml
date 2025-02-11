@@ -86,6 +86,7 @@ homebrew_installed_packages:
   - kubecm
   - kubernetes-cli
   - libusb
+  - lolcat
   - lsusb
   - sandreas/tap/m4b-tool
   - mas
@@ -226,22 +227,23 @@ configure_sublime: false
 # # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
 
-visual_studio_code_extensions:
-  - 4ops.terraform
-  - github.copilot
-  - github.copilot-chat
-  - ms-python.debugpy
-  - ms-python.python
-  - ms-python.vscode-pylance
-  - paulober.pico-w-go
-  - redhat.ansible
-  - redhat.vscode-yaml
-  - visualstudioexptteam.intellicode-api-usage-examples
-  - visualstudioexptteam.vscodeintellicode
+visual_studio_code:
+  settings_path: ~/workspace/dotfiles/vscode-settings.json
+  extensions:
+    - 4ops.terraform
+    - github.copilot
+    - github.copilot-chat
+    - ms-python.debugpy
+    - ms-python.python
+    - ms-python.vscode-pylance
+    - paulober.pico-w-go
+    - redhat.ansible
+    - redhat.vscode-yaml
+    - visualstudioexptteam.intellicode-api-usage-examples
+    - visualstudioexptteam.vscodeintellicode
 
 git_repos:
   - git@github.com:andrewcfitz/connect.git
-  - git@github.com:andrewcfitz/dotfiles.git
   - git@github.com:andrewcfitz/media.git
   - git@github.com:andrewcfitz/plex-k3s.git
   - git@github.com:fitz-biz/1password-connect.git
@@ -266,3 +268,9 @@ git_repos:
   - git@github.com:fitz-biz/smtp-bridge.git
   - git@github.com:fitz-biz/stuff.git
   - git@github.com:fitz-biz/tailscale.git
+
+git_repos_to_switch_to_ssh:
+  - name: dotfiles
+    ssh_url: git@github.com:andrewcfitz/dotfiles.git
+  - name: mac-dev-playbook
+    ssh_url: git@github.com:andrewcfitz/mac-dev-playbook.git
