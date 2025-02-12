@@ -5,6 +5,7 @@
     dest: "{{ ansible_env.HOME }}/workspace/{{ item.name | default(item) | basename | regex_replace('\\.git$', '') }}"
     version: "main"
     update: false
+    accept_newhostkey: true
   loop: "{{ git_repos }}"
   when: git_repos is defined
 
