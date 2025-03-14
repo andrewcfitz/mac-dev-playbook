@@ -65,6 +65,7 @@ homebrew_installed_packages:
   - cloudflare-wrangler2
   - coreutils
   - crane
+  - docker-compose
   - dosbox-x
   - exiftool
   - ffmpeg
@@ -94,8 +95,6 @@ homebrew_installed_packages:
   - nmap
   - node
   - openapi-generator
-  - podman
-  - podman-compose
   - postgresql
   - powerlevel10k
   - pulumi
@@ -126,6 +125,7 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - 1password
   - 1password-cli
+  - aldente
   - android-studio
   - audacity
   - balenaetcher
@@ -137,6 +137,7 @@ homebrew_cask_apps:
   - cyberduck
   - dbeaver-community
   - discord
+  - docker
   - dotnet-sdk7
   - dotnet-sdk8
   - dotnet-sdk9
@@ -155,11 +156,9 @@ homebrew_cask_apps:
   - mqtt-explorer
   - mysqlworkbench
   - ngrok
-  - notion
   - obsidian
   - openinterminal
   - peripheryapp/periphery/periphery
-  - podman-desktop
   - postman
   - proton-mail
   - qflipper
@@ -244,12 +243,7 @@ visual_studio_code:
 
 git_repos:
   - git@github.com:andrewcfitz/connect.git
-  - git@github.com:andrewcfitz/media.git
-  - git@github.com:andrewcfitz/plex-k3s.git
   - git@github.com:fitz-biz/1password-connect.git
-  - git@github.com:fitz-biz/car.git
-  - git@github.com:fitz-biz/cloudflared-k3s.git
-  - git@github.com:fitz-biz/download.git
   - git@github.com:fitz-biz/Fitz.OnePassword.Connect.git
   - git@github.com:fitz-biz/Fitz.Peplink.Api.Client.git
   - git@github.com:fitz-biz/k3s-cluster1.git
@@ -258,16 +252,13 @@ git_repos:
   - git@github.com:fitz-biz/ha-tools.git
   - git@github.com:fitz-biz/HAGpsSync.git
   - git@github.com:fitz-biz/louie-camp.git
-  - git@github.com:fitz-biz/louie-management.git
   - git@github.com:fitz-biz/management.git
   - git@github.com:fitz-biz/monitor.git
-  - git@github.com:fitz-biz/nas-apps.git
+  - git@github.com:fitz-biz/apps.git
   - git@github.com:fitz-biz/proget-k3s.git
   - git@github.com:fitz-biz/proxmox.git
   - git@github.com:fitz-biz/rvchecklist.git
   - git@github.com:fitz-biz/smtp-bridge.git
-  - git@github.com:fitz-biz/stuff.git
-  - git@github.com:fitz-biz/tailscale.git
 
 git_repos_to_switch_to_ssh:
   - name: dotfiles
