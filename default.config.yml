@@ -62,30 +62,41 @@ homebrew_installed_packages:
   - bash
   - cabextract
   - cdrtools
+  - cloud-provider-kind
+  - cloudflare-wrangler
   - cloudflare-wrangler2
   - coreutils
   - crane
+  - docker
   - docker-compose
+  - dockutil
   - dosbox-x
   - exiftool
   - ffmpeg
   - fastlane
   - figlet
+  - fluxcd/tap/flux
   - fontconfig
+  - fswatch
   - gh
   - ghostscript
   - git
   - git-lfs
   - gnu-sed
+  - go
   - helm
   - icu4c@76
   - iperf3
   - jq
   - k3sup
+  - kind
+  - koekeishiya/formulae/yabai
   - kompose
   - pulumi/tap/kube2pulumi
   - kubecm
   - kubernetes-cli
+  - kubetail
+  - kustomize
   - libusb
   - lolcat
   - lsusb
@@ -95,24 +106,28 @@ homebrew_installed_packages:
   - nmap
   - node
   - openapi-generator
-  - postgresql
+  - postgresql@14
   - powerlevel10k
   - pulumi
+  - pulumi/tap/pulumictl
   - rclone
   - rbenv
   - s3cmd
   - sl
   - speedtest-cli
   - stow
+  - stuntman
   # - swiftlint
   - tcptraceroute
   - tfenv
   - util-linux
   - vim
+  - virtctl
   - watch
   - wget
   - wimlib
   - xcodes
+  - xmlstarlet
   - zsh-autosuggestions
   - zsh-syntax-highlighting
 
@@ -175,6 +190,11 @@ homebrew_cask_apps:
   - vagrant
   - visual-studio-code
   - vlc
+  - coconutbattery
+  - inkscape
+  - jdownloader
+  - warp
+  - windsurf
   - wireshark
 
 # # See `geerlingguy.mas` role documentation for usage instructions.
