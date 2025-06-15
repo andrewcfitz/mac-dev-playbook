@@ -268,7 +268,7 @@ git_repos:
   - git@github.com:fitz-biz/Fitz.Peplink.Api.Client.git
   - git@github.com:fitz-biz/k3s-cluster1.git
   - git@github.com:fitz-biz/getalong.git
-  - git@github.com:fitz-biz/github-runners.git
+  - git@github.com:fitz-biz/shared-cluster.git
   - git@github.com:fitz-biz/ha-tools.git
   - git@github.com:fitz-biz/HAGpsSync.git
   - git@github.com:fitz-biz/louie-camp.git
