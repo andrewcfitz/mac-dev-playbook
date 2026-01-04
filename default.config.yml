@@ -47,6 +47,7 @@ dotfiles_files:
   - .osx
   - .vimrc
   - .p10k.zsh
+  - .config/direnv/direnv.toml
 
 xcode_xip_filename: "Xcode-16.1.0.xip"
 xcode_major_version: 16
@@ -67,6 +68,7 @@ homebrew_installed_packages:
   - cloudflare-wrangler2
   - coreutils
   - crane
+  - direnv
   - docker
   - docker-compose
   - dockutil
@@ -128,7 +130,9 @@ homebrew_installed_packages:
   - wimlib
   - xcodes
   - xmlstarlet
+  - zsh-autocomplete
   - zsh-autosuggestions
+  - zsh-fast-syntax-highlighting
   - zsh-syntax-highlighting
 
 homebrew_taps:
@@ -156,6 +160,7 @@ homebrew_cask_apps:
   - dotnet-sdk7
   - dotnet-sdk8
   - dotnet-sdk9
+  - dotnet-sdk10
   - element
   - firefox
   - font-hack-nerd-font
@@ -199,7 +204,8 @@ homebrew_cask_apps:
 
 # # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
-mas_installed_app_ids: []
+mas_installed_app_ids: 
+  - 1451685025
 # mas_email: ""
 # mas_password: ""
 
