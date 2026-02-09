@@ -42,12 +42,17 @@ dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/workspace/dotfiles
 dotfiles_files:
   - .zshrc
+  - .zsh_plugins.txt
+  - .aliases
+  - .devbox.zsh
   - .gitconfig
   - .gitignore
   - .osx
   - .vimrc
   - .p10k.zsh
+  - .starship.toml
   - .config/direnv/direnv.toml
+  - .config/direnv/lib/op-kubeconfig.sh
 
 xcode_xip_filename: "Xcode-16.1.0.xip"
 xcode_major_version: 16
@@ -57,10 +62,12 @@ homebrew_installed_packages:
   - actionlint
   # - ansible # Installed via Pip.
   - ansible-lint
+  - antidote
   - aria2
   - aws-nuke
   - awscli
   - bash
+  - beads
   - cabextract
   - cdrtools
   - cloud-provider-kind
@@ -117,11 +124,13 @@ homebrew_installed_packages:
   - s3cmd
   - sl
   - speedtest-cli
+  - starship
   - stow
   - stuntman
   # - swiftlint
   - tcptraceroute
   - tfenv
+  - tmux
   - util-linux
   - vim
   - virtctl
